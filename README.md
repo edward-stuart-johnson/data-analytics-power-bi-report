@@ -21,30 +21,30 @@ I renamed the columns in my dataset to align with Power BI naming conventions (e
 
 
 
-   I downloaded the Products.csv file  and then used Power BI's Get Data option to import the file into my project.
+I downloaded the Products.csv file  and then used Power BI's Get Data option to import the file into my project.
 
-   The Products table contains information about each product sold by the company, including the product code, name, category, cost price, sale price, and weight.
+The Products table contains information about each product sold by the company, including the product code, name, category, cost price, sale price, and weight.
 
 In the Data view, I used the Remove Duplicates function on the product_code column to ensure each product code is unique.
 
-    In Power Query Editor, I used the Column From Examples feature to generate two new columns from the weight column - one for the weight values and another for the units (e.g. kg, g, ml). 
-    
-    For the newly created units column, replaced any blank entries with kg using the Replace Values feature.
-    I converted the data type of the values column to a decimal number
-    I replaced error values with the number 1
-    
-    In  the Data view, I created a new calculated column, such that if the unit in the units column is not kg, divide the corresponding value in the values column by 1000 to convert it to kilograms.
-    
-    I returned to the Power Query Editor and delete any columns that are no longer needed.
+In Power Query Editor, I used the Column From Examples feature to generate two new columns from the weight column - one for the weight values and another for the units (e.g. kg, g, ml). 
+
+For the newly created units column, replaced any blank entries with kg using the Replace Values feature.
+I converted the data type of the values column to a decimal number
+I replaced error values with the number 1
+
+In  the Data view, I created a new calculated column, such that if the unit in the units column is not kg, divide the corresponding value in the values column by 1000 to convert it to kilograms.
+
+I returned to the Power Query Editor and delete any columns that are no longer needed.
 
 I renamed the columns in your dataset to match Power BI naming conventions, ensuring a consistent and clear presentation in my report.
 
 
 
-    I use Power BI's Get Data option to connect to Azure Blob Storage and import the Stores table into my project. The Stores table contains information about each store, including the store code, store type, country, region, and address.
+I use Power BI's Get Data option to connect to Azure Blob Storage and import the Stores table into my project. The Stores table contains information about each store, including the store code, store type, country, region, and address.
 
 
-    
+
 I downloaded the Customers.zip file - inside the zip file is a folder containing three CSV files, each with the same column format, one for each of the regions in which the company operates.
 
 I used the Get Data option (using the Folder data connector) in Power BI to import the Customers folder into my project. I selected Combine and Transform to import the data; Power BI automatically appended the three files into one query.
