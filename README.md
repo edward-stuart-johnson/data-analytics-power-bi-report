@@ -4,9 +4,6 @@
 
 I connected to an Azure SQL database, a Microsfot Azure Storage Account, and web-hosted CSV files to import useful data for this dataset. I cleaned and organized the data by removign irrelevant columns, splittign date-tiem details, and ensurign data cosnsitency. I also renamed columsn to fit Power BI conventions.
 
-Document your achievements in a comprehensive manner. Update the README file on the GitHub repository of this project with detailed information about the tasks accomplished in this milestone. For example you should describe the methods used to import the data, and the transformations you performed. 
-
-
 I connect to the Azure SQL Database and import the orders_powerbi table using the Import option in Power BI. 
 
 The Orders table is the main fact table. It contains information about each order, including the order and shipping dates, the customer, store and product IDs for associating with dimension tables, and the amount of each product ordered. Each order in this table consists of an order of a single product type, so there is only one product code per order. 
