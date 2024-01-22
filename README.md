@@ -139,9 +139,13 @@ Hierarchies allow me to drill down into the data and perform granular analysis w
 I created a date hierarchy using the following levels:
 
 Start of Year
+
 Start of Quarter
+
 Start of Month
+
 Start of Week
+
 Date
 
 I created a new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column, according to the following scheme:
@@ -163,11 +167,15 @@ Geography = CONCATENATE(CONCATENATE(Stores[Country Region], ", "), Stores[Countr
 I ensured that the following columns have the correct data category assigned, as follows:
 
 World Region : Continent
+
 Country : Country
+
 Country Region : State or Province
 
 I created a Geography hierarchy using the following levels:
 
 World Region
+
 Country
+
 Country Region
