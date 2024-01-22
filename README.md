@@ -132,5 +132,42 @@ I created a measure called Revenue YTD that calculates the total revenue for the
 Revenue YTD = TOTALYTD(SUMX(Orders, RELATED(Products[Sale Price]) * Orders[Product Quantity]), Orders[Order Date])
 
 
+### Create Date and Georgraphy hierarchies
 
-the DAX formulas I used to create key measures and calculated columns. 
+Hierarchies allow me to drill down into the data and perform granular analysis within the report. I created two hierarchies in this task: one for dates, to facilitate drill-down in my line charts, and one for geography, to allow me to filter the data by region, country and province/state.
+
+I created a date hierarchy using the following levels:
+
+Start of Year
+Start of Quarter
+Start of Month
+Start of Week
+Date
+
+I created a new calculated column in the Stores table called Country that creates a full country name for each row, based on the Stores[Country Code] column, according to the following scheme:
+GB : United Kingdom
+US : United States
+DE : Germany
+
+Here is the DAX language formula:
+
+Country = SWITCH([Country Code], 
+"GB", "United Kingdom",
+"US", "United States",
+"DE", "Germany")
+
+In addition to the country hierarchy, it can sometimes be helpful to have a full geography column, as in some cases this makes mapping more accurate. I created a new calculated column in the Stores table called Geography that creates a full geography name for each row, based on the Stores[Country Region], and Stores[Country] columns, separated by a comma and a space:
+
+Geography = CONCATENATE(CONCATENATE(Stores[Country Region], ", "), Stores[Country])
+
+I ensured that the following columns have the correct data category assigned, as follows:
+
+World Region : Continent
+Country : Country
+Country Region : State or Province
+
+I created a Geography hierarchy using the following levels:
+
+World Region
+Country
+Country Region
