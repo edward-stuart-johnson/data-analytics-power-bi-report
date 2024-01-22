@@ -50,3 +50,33 @@ Once the data are loaded into Power BI, I create a Full Name column by combining
 
 I delete any obviously unused columns (eg. index columns) and renamed the remaining columns to align with Power BI naming conventions.
 
+## Creatign the Data Model
+
+describe the steps you took to generate the date table, Create a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of the year containing the latest date in the Orders['Shipping Date'] column usign the DAX formula:
+
+Dates = CALENDAR(
+    STARTOFYEAR(Orders[Order Date]), 
+    ENDOFYEAR(Orders[Shipping Date])
+)
+
+Day Of Week = WEEKDAY(Dates[Date],2)
+
+Month = MONTH(Dates[Date])
+
+Month Name = FORMAT(DATE(1, Dates[Month], 1), "MMMM")
+
+Quarter = QUARTER(Dates[Date])
+
+Year = YEAR(Dates[Date])
+
+Start of Year = STARTOFYEAR(Dates[Date])
+
+Start of Quarter = STARTOFQUARTER(Dates[Date])
+
+Start of Month = STARTOFMONTH(Dates[Date])
+
+Start of Week = Dates[Date] - WEEKDAY(Dates[Date],2) + 1
+ 
+ add a screenshot image of my data model
+ 
+ the DAX formulas I used to create key measures and calculated columns. 
