@@ -123,9 +123,11 @@ I created a measure called Total Quantity that counts the number of items sold i
 
 Total Quantity = SUM(Orders[Product Quantity]) 
 
-I created a measure called Profit YTD that calculates the total profit for the current year
+I created a measure called Profit YTD that calculates the total profit for the current year:
 
-I created a measure called Revenue YTD that calculates the total revenue for the current year
+Profit YTD = TOTALYTD(SUMX(Orders, (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])) * Orders[Product Quantity]), Orders[Order Date])
+
+I created a measure called Revenue YTD that calculates the total revenue for the current year:
 
 Revenue YTD = TOTALYTD(SUMX(Orders, RELATED(Products[Sale Price]) * Orders[Product Quantity]), Orders[Order Date])
 
