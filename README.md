@@ -57,8 +57,8 @@ I delete any obviously unused columns (eg. index columns) and renamed the remain
 I created a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of the year containing the latest date in the Orders['Shipping Date'] column usign the DAX formula:
 
 Dates = CALENDAR(
-    STARTOFYEAR(Orders[Order Date]), 
-    ENDOFYEAR(Orders[Shipping Date])
+STARTOFYEAR(Orders[Order Date]), 
+ENDOFYEAR(Orders[Shipping Date])
 )
 
 Day Of Week = WEEKDAY(Dates[Date],2)
@@ -83,43 +83,52 @@ Start of Week = Dates[Date] - WEEKDAY(Dates[Date],2) + 1
 
 I created relationships between the tables to form a star schema. The relationships are as follows:
 
-    Orders[product_code] to Products[product_code]
-    Orders[Store Code] to Stores[store code]
-    Orders[User ID] to Customers[User UUID]
-    Orders[Order Date] to Date[date]
-    Orders[Shipping Date] to Date[date]
+Orders[product_code] to Products[product_code]
+Orders[Store Code] to Stores[store code]
+Orders[User ID] to Customers[User UUID]
+Orders[Order Date] to Date[date]
+Orders[Shipping Date] to Date[date]
 
 i ensured that the relationship between Orders[Order Date] and Date[date] is the active relationship, and that all relationships are one-to-many, with a single filter direction from the one side to the many side
- 
- add a screenshot image of my data model
 
- ### Create a Measures table
+add a screenshot image of my data model
 
- Creating a separate table for measures is a best practice that will help keep the data model organized and easy to navigate. 
- 
+### Create a Measures table
+
+Creating a separate table for measures is a best practice that will help keep the data model organized and easy to navigate. 
+
 I created a new table in the data Model View with Power Query Editor. It is generally better to use the latter approach, as it makes the measures table visible in the Query Editor, which is useful for debugging and troubleshooting.
 
 ### Create key measures
 
 I created some of the key measures that will be used in the report. These give me a starting point for building the analysis:
 
-    I created a measure called Total Orders that counts the number of orders in the Orders table:
-    
+I created a measure called Total Orders that counts the number of orders in the Orders table:
 
-    I created a measure called Total Revenue that multiplies the Orders[Product Quantity] column by the Products[Sale_Price] column for each row, and then sums the result
+Total Orders = COUNTROWS(Orders)
 
-    I created a measure called Total Profit which performs the following calculation:
-        For each row, subtract the Products[Cost_Price] from the Products[Sale_Price], and then multiply the result by the Orders[Product Quantity]
+I created a measure called Total Revenue that multiplies the Orders[Product Quantity] column by the Products[Sale Price] column for each row, and then sums the result:
 
-        Sums the result for all rows
+Total Revenue = SUMX(Orders, Orders[Product Quantity] * RELATED(Products[Sale Price]))
 
-    I created a measure called Total Customers that counts the number of unique customers in the Orders table. This measure needs to change as the Orders table is filtered, so do not just count the rows of the Customers table!
+I created a measure called Total Profit which performs the following calculation: For each row, subtract the Products[Cost_Price] from the Products[Sale_Price], and then multiply the result by the Orders[Product Quantity]. then, it sums the result for all rows:
 
-    I created a measure called Total Quantity that counts the number of items sold in the Orders table
+Total Profit = SUMX(Orders, (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])) * Orders[Product Quantity])
 
-    I created a measure called Profit YTD that calculates the total profit for the current year
+I created a measure called Total Customers that counts the number of unique customers in the Orders table:
 
-    I created a measure called Revenue YTD that calculates the total revenue for the current year
+Total Customers = DISTINCTCOUNT(Orders[User ID])
 
- 
- the DAX formulas I used to create key measures and calculated columns. 
+I created a measure called Total Quantity that counts the number of items sold in the Orders table:
+
+Total Quantity = SUM(Orders[Product Quantity]) 
+
+I created a measure called Profit YTD that calculates the total profit for the current year
+
+I created a measure called Revenue YTD that calculates the total revenue for the current year
+
+Revenue YTD = TOTALYTD(SUMX(Orders, RELATED(Products[Sale Price]) * Orders[Product Quantity]), Orders[Order Date])
+
+
+
+the DAX formulas I used to create key measures and calculated columns. 
