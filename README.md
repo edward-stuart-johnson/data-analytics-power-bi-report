@@ -221,3 +221,52 @@ I created  a set of three card visuals that provide insights into the top custom
 I added a date slicer to allow users to filter the page by year, using the "between" slicer-style.
 
 ![](Customer_Detail_Page_Screenshot.png)
+
+## Creating an Executive Summary Page
+
+I created a page to give an overview of the company's performance as a whole, so that C-suite executives and quickly get insights and check otucomes against key targets. 
+
+I created cards visuals for my Total Revenue, Total Orders and Total Profit measures. I used the Format > Callout Value pane to ensure no more than 2 decimal places in the case of the revenue and profit cards, and only 1 decimal place in the case of the Total Orders measure.
+
+I added a revneue trendign line chart by copying the line graph from my Customer Detail page, and change the Y-axis to Total Revenue.
+
+I added a pair of donut charts, showing Total Revenue broken down by Store[Country] and Store[Store Type] respectively.
+
+I added  a bar chart showing number of orders by product category. I copied the Total Customers by Product Category donut chart from the Customer Detail page
+
+I went to the visual's "Build a visual" pane to change the visual type to Clustered bar chart
+
+I changed  the X-axis field from Total Customers to Total Orders
+
+With the Format pane open, I clicked on one of the bars to bring up the Colors tab, and sleeced a colour from my chsoen theme.
+
+###  KPI Visuals
+
+I created KPIs for Quarterly Revenue, Orders and Profit. 
+
+I created a set of new measures for the quarterly targets:
+
+Previous Quarter Profit
+Previous Quarter Revenue
+Previous Quarter Orders
+Target Profit, Revenue, and Orders, equal to 5% growth in each measure compared to the previous quarter e.g.
+
+Target Profit = 1.05 * [Previous Quarter Profit]
+
+
+
+I was then able to create a  KPI visual for the revenue:
+
+The Value field is Total Revenue
+The Trend Axis is Start of Quarter
+The Target is Target Revenue
+
+In the Format pane, I set the Trend Axis to On, expand the associated tab, and set the values as follows:
+
+Direction : High is Good
+Bad Colour : red
+Transparency : 15%
+
+I formatted the Callout Value so that it only shows to 1 decimal place
+
+I duplicated the card two more times, and set the appropriate values for the Profit and Orders cards.
