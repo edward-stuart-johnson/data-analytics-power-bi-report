@@ -202,6 +202,8 @@ I added a Column Chart visual showing the number of customers who purchased each
 
 I added a Line Chart visual to the top of the page. It shows [Total Customers] on the Y axis, and uses the created Date Hierarchy for the X axis. Users area allowed to drill down to the month level, but not to weeks or individual dates.
 
+![](line_chart_setup_screenshot.png)
+
 I added a trend line, and a forecast for the next 10 periods with a 95% confidence interval 
 
 I created a new table which displays the top 20 customers, filtered by revenue. The table shows each customer's full name, revenue, and number of orders.
