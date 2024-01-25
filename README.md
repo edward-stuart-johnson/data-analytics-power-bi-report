@@ -8,7 +8,7 @@ The report will present a high-level business summary tailored for C-suite execu
 
 ## Data Loading and Preparation
 
-I connected to an Azure SQL database, a Microsfot Azure Storage Account, and web-hosted CSV files to import useful data for this dataset. I cleaned and organized the data by removing irrelevant columns, splitting date-time details, and ensuring data consistency. I also renamed columns to fit Power BI conventions.
+I connected to an Azure SQL database, a Microsoft Azure Storage Account, and web-hosted CSV files to import useful data for this dataset. I cleaned and organized the data by removing irrelevant columns, splitting date-time details, and ensuring data consistency. I also renamed columns to fit Power BI conventions.
 
 I connected to the Azure SQL Database and imported the orders_powerbi table using the Import option in Power BI. 
 
@@ -50,9 +50,9 @@ Once the data are loaded into Power BI, I create a Full Name column by combining
 
 I delete any obviously unused columns (eg. index columns) and renamed the remaining columns to align with Power BI naming conventions.
 
-## Creatign the Data Model
+## Creating the Data Model
 
-### generate the date table
+### Generating the date table
 
 I created a date table running from the start of the year containing the earliest date in the Orders['Order Date'] column to the end of the year containing the latest date in the Orders['Shipping Date'] column usign the DAX formula:
 
@@ -79,7 +79,7 @@ Start of Month = STARTOFMONTH(Dates[Date])
 
 Start of Week = Dates[Date] - WEEKDAY(Dates[Date],2) + 1
 
-### Build the Star Schema data model
+### Building the Star Schema data model
 
 I created relationships between the tables to form a star schema. The relationships are as follows:
 
@@ -89,11 +89,9 @@ Orders[User ID] to Customers[User UUID]
 Orders[Order Date] to Date[date]
 Orders[Shipping Date] to Date[date]
 
-i ensured that the relationship between Orders[Order Date] and Date[date] is the active relationship, and that all relationships are one-to-many, with a single filter direction from the one side to the many side
+I ensured that the relationship between Orders[Order Date] and Date[date] is the active relationship, and that all relationships are one-to-many, with a single filter direction from the one side to the many side
 
-add a screenshot image of my data model
-
-### Create a Measures table
+### Creating a Measures table
 
 Creating a separate table for measures is a best practice that will help keep the data model organized and easy to navigate. 
 
@@ -179,3 +177,5 @@ World Region
 Country
 
 Country Region
+
+![](Data_Model_Screenshot.png)
