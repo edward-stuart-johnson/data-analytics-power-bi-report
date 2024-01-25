@@ -182,21 +182,19 @@ Country Region
 
 ## Building the Customer Detail Page
 
-I created a reprot page focussed on custoemr-leel analysis.
+I created a report page focussed on custoemr-level analysis.
 
-I created headlien card visuals by 
-
-create two rectangles and arrange them in the top left corner of the page. ( the backgrounds for the card visuals.)
-
-Add a card visual for the [Total Customers] measure we created earlier and renamed the field Unique Customers.
+I created headline card visuals: I created two rectangles as the backgrounds for the card visuals and added a card visual for the [Total Customers] measure I created earlier and renamed the field Unique Customers.
 
 I created a new measure in my Measures Table called [Revenue per Customer], which is the [Total Revenue] divided by the [Total Customers]:
 
 Revenue per Customer = DIVIDE([Total Revenue], [Total Customers])
 
-I added a card visual for the [Revenue per Customer] measure
+I added a card visual for the [Revenue per Customer] measure.
 
-I created summary charts ; I added a Donut Chart visual showing the total customers for each country, using the Users[Country] column to filter the [Total Customers] measure
+I created summary charts: I added a Donut Chart visual showing the total customers for each country, using the Users[Country] column to filter the [Total Customers] measure:
+
+![](donut_chart_filters_screenshot.png)
 
 I added a Column Chart visual showing the number of customers who purchased each product category, using the Products[Category] column to filter the [Total Customers] measure .
 
