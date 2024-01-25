@@ -272,3 +272,5 @@ Transparency : 15%
 I formatted the Callout Value so that it only shows to 1 decimal place
 
 I duplicated the card two more times, and set the appropriate values for the Profit and Orders cards.
+
+![](executive_summary_page_screenshot.png)
