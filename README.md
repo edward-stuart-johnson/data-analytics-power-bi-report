@@ -204,7 +204,9 @@ I added a Line Chart visual to the top of the page. It shows [Total Customers] o
 
 ![](line_chart_setup_screenshot.png)
 
-I added a trend line, and a forecast for the next 10 periods with a 95% confidence interval 
+I added a trend line, and a forecast for the next 10 periods with a 95% confidence interval:
+
+![](line_chart_forecast_setup_screenshot.png)
 
 I created a new table which displays the top 20 customers, filtered by revenue. The table shows each customer's full name, revenue, and number of orders.
 
