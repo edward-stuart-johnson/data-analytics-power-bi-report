@@ -249,18 +249,23 @@ I created KPIs for Quarterly Revenue, Orders and Profit.
 I created a set of new measures for the quarterly targets:
 
 Previous Quarter Profit
+
 Previous Quarter Revenue
+
 Previous Quarter Orders
+
 Target Profit, Revenue, and Orders, equal to 5% growth in each measure compared to the previous quarter e.g.
 
-Target Profit = 1.05 * [Previous Quarter Profit]
+  Target Profit = 1.05 * [Previous Quarter Profit]
 
 
 
 I was then able to create a  KPI visual for the revenue:
 
 The Value field is Total Revenue
+
 The Trend Axis is Start of Quarter
+
 The Target is Target Revenue
 
 In the Format pane, I set the Trend Axis to On, expand the associated tab, and set the values as follows:
