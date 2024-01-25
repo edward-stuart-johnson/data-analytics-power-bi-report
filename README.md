@@ -196,7 +196,9 @@ I created summary charts: I added a Donut Chart visual showing the total custome
 
 ![](donut_chart_filters_screenshot.png)
 
-I added a Column Chart visual showing the number of customers who purchased each product category, using the Products[Category] column to filter the [Total Customers] measure .
+I added a Column Chart visual showing the number of customers who purchased each product category, using the Products[Category] column to filter the [Total Customers] measure:
+
+![](column_chart_setup_screenshot.png)
 
 I added a Line Chart visual to the top of the page. It shows [Total Customers] on the Y axis, and uses the created Date Hierarchy for the X axis. Users area allowed to drill down to the month level, but not to weeks or individual dates.
 
