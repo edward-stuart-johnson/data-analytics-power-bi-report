@@ -240,6 +240,8 @@ I changed  the X-axis field from Total Customers to Total Orders
 
 With the Format pane open, I clicked on one of the bars to bring up the Colors tab, and sleeced a colour from my chsoen theme.
 
+I created a table of Top 10 Products ranked by Total Orders.
+
 ###  KPI Visuals
 
 I created KPIs for Quarterly Revenue, Orders and Profit. 
