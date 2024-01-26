@@ -270,12 +270,12 @@ Direction : High is Good
 Bad Colour : red
 Transparency : 15%
 
-## Product Detail Page
-
-I created a table of Top 10 Products ranked by Total Orders.
-
 I formatted the Callout Value so that it only shows to 1 decimal place
 
 I duplicated the card two more times, and set the appropriate values for the Profit and Orders cards.
 
 ![](executive_summary_page_screenshot.png)
+
+## Product Detail Page
+
+I created a table of Top 10 Products ranked by Total Orders.
