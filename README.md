@@ -281,3 +281,5 @@ I duplicated the card two more times, and set the appropriate values for the Pro
 I created a table of Top 10 Products ranked by Total Orders.
 
 ![](slicer_bar_closed_screenshot.png)
+
+![](slicer_bar_open_screenshot.png)
