@@ -240,8 +240,6 @@ I changed  the X-axis field from Total Customers to Total Orders
 
 With the Format pane open, I clicked on one of the bars to bring up the Colors tab, and sleeced a colour from my chsoen theme.
 
-I created a table of Top 10 Products ranked by Total Orders.
-
 ###  KPI Visuals
 
 I created KPIs for Quarterly Revenue, Orders and Profit. 
@@ -258,8 +256,6 @@ Target Profit, Revenue, and Orders, equal to 5% growth in each measure compared 
 
   Target Profit = 1.05 * [Previous Quarter Profit]
 
-
-
 I was then able to create a  KPI visual for the revenue:
 
 The Value field is Total Revenue
@@ -273,6 +269,10 @@ In the Format pane, I set the Trend Axis to On, expand the associated tab, and s
 Direction : High is Good
 Bad Colour : red
 Transparency : 15%
+
+## Product Detail Page
+
+I created a table of Top 10 Products ranked by Total Orders.
 
 I formatted the Callout Value so that it only shows to 1 decimal place
 
