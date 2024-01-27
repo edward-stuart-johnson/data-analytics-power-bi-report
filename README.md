@@ -254,7 +254,7 @@ Previous Quarter Orders
 
 Target Profit, Revenue, and Orders, equal to 5% growth in each measure compared to the previous quarter e.g.
 
-  Target Profit = 1.05 * [Previous Quarter Profit]
+Target Profit = 1.05 * [Previous Quarter Profit]
 
 I was then able to create a  KPI visual for the revenue:
 
@@ -278,8 +278,92 @@ I duplicated the card two more times, and set the appropriate values for the Pro
 
 ## Product Detail Page
 
-I created a table of Top 10 Products ranked by Total Orders.
+### Gauge Visuals
+
+I added a set of three gauges, showing the current-quarter performance of Orders, Revenue and Profit against a quarterly target. The CEO had told me that they were targeting 10% quarter-on-quarter growth in all three metrics.
+
+In my measures table, I defined DAX measures for the three metrics, and for the quarterly targets for each metric. I used the TOTALQTD and CALCULATE functions to calculate the cumulative values and the target values based on the 10% growth rate.
+
+I created three gauge visuals, and assigned the measures I had created. In each case, the maximum value of the gauge was set to the target, so that the gauge showed as full when the target was met.
+
+I applied conditional formatting to the callout value (the number in the middle of the gauge), so that it showed as red if the target was not yet met, and black otherwise. I used different colours if it fit better with my colour scheme.
+
+I arranged my gauges so that they were evenly spaced along the top of the report, but left another similarly-sized space for the card visuals that displayed which slicer states were currently selected. I used the alignment and distribution tools to adjust the position and size of my visuals.
+
+### Filter State Cards
+
+To the left of the gauges, I put some placeholder shapes for the cards which will show the filter state. Using a colour in keeping with my theme, I added two rectangle shapes. I will sort out the values for these later on, once I had added the slicer panel.
+
+### Area Chart of Revenue by Product Category
+
+I wanted to add an area chart that showed how the different product categories were performing in terms of revenue over time.
+
+I added a new area chart, and applied the following fields:
+
+X axis is Dates[Start of Quarter]
+Y axis is Total Revenue
+Legend is Products[Category]
+
+### Top 10 Product Table
+
+I created a table of Top 10 Products ranked by Total Orders. The table has the followign fields:
+
+the following fields:
+
+Product Description
+Total Revenue
+Total Customers
+Total Orders
+Profit per Order
+
+I created a new measure of Profit per Order = DIVIDE([Total Profit], [Total Orders])
+
+### scatter graph
+
+The products team wanted to know which items to suggest to the marketing team for a promotional campaign. They wanted a visual that allowed them to quickly see which product ranges were both top-selling items and also profitable. A scatter graph is ideal for this job.
+
+I created a new calculated column called [Profit per Item] in my Products table, using a DAX formula to work out the profit per item:
+
+Profit per Item = [Sale Price] -  [Cost Price]
+
+I added a new Scatter chart to the page, and configured it as follows:
+
+Values are Products[Description]
+X-Axis is Products[Profit per Item]
+Y-Axis is Products[Total Quantity]
+Legend is Products[Category]
+
+### Slicer Toolbar
+
+Slicers were a handy way for me to control how the data on a page were filtered, but adding multiple slicers cluttered up the layout of my report page.
+
+A professional-looking solution to this issue was to use Power BI’s bookmarks feature to create a pop-out toolbar which could be accessed from the navigation bar on the left-hand side of my report.
+
+I downloaded a collection of custom icons. I used these for all of my navigation bar icons.
+
+I added a new blank button to the top of my navigation bar, set the icon type to Custom in the Format pane, and chose Filter_icon.png as the icon image. I also set the tooltip text to Open Slicer Panel.
+
+I added a new rectangle shape in the same colour as my navigation bar. Its dimensions were the same height as the page, and about 3-5X the width of the navigation bar itself. I opened the Selection pane and brought it to the top of the stacking order.
+
+I added two new slicers. One was set to Products[Category], and the other to Stores[Country]. I changed the titles to Product Category and Country respectively.
+
+They are in Vertical List slicer style.
+It is possible to select multiple items in the Product Category slicer, but only one option at a time is selectable in the Country slicer
+I configured the Country slicer so that there is a Select All option.
+I ensured the formatting is neat, and fit with my chosen report style.
+In the Selection pane I grouped the slicers with my slicer toolbar shape.
+
+I needed to add a Back button so that I could hide the slicer toolbar when it is not in use.
+
+I added a new button, and selected the Back button type. I positioned it somewhere sensible, in the top-right corner of the toolbar.
+In the Selection pane, I dragged the back button into the group with the slicers and toolbar shape.
+
+I opened the Bookmarks pane and added two new bookmarks: I created one bookmark with the toolbar group hidden in the Selection pane, and one with it visible. I named them Slicer Bar Closed and Slicer Bar Open. I right-clicked each bookmark in turn, and ensured that Data was unchecked. This prevents the bookmarks from altering the slicer state when I opened and closed the toolbar.
+
+The final step was to assign the actions on my buttons to the bookmarks. I opened the Format pane and turned the Action setting on for both my Filter button and my Back button. For each button, I set the Type to Bookmark, and selected the appropriate bookmark. 
 
 ![](slicer_bar_closed_screenshot.png)
 
 ![](slicer_bar_open_screenshot.png)
+
+Finally, I tested my buttons and slicers (I remembered I needed to Ctrl-Click to use buttons while designing the report in Power BI Desktop).
