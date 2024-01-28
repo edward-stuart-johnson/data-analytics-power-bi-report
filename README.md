@@ -385,11 +385,11 @@ Lasso button: Off
 
 I assigned my Geography hierarchy to the Location field, and ProfitYTD to the Bubble size field.
 
-![](stores_map_screenshot.png)
-
 ### Country Slicer
 
 I added a slicer above the map, set the slicer field to Stores[Country], and in the Format section I set the slicer style as Tile and the Selection settings to Multi-select with Ctrl/Cmd and Show "Select All" as an option in the slicer.
+
+![](stores_map_screenshot.png)
 
 ### Stores Drillthrough Page
 
