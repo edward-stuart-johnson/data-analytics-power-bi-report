@@ -379,9 +379,9 @@ The best way to do this is using a map visual.
 I added a new map visual on the Stores Map page. It took up the majority of the page, just leaving a narrow band at the top of the page for a slicer. I set the style to my satisfaction in the Format pane, and made sure Show Labels was set to On.
 
 I set the controls of my map as follows:
-    Auto-Zoom: On
-    Zoom buttons: Off
-    Lasso button: Off
+Auto-Zoom: On
+Zoom buttons: Off
+Lasso button: Off
 
 I assigned my Geography hierarchy to the Location field, and ProfitYTD to the Bubble size field.
 
@@ -404,7 +404,9 @@ I created a new page named Stoes Drillthrough. I opened the format pane and expa
 
 I needed some measures for the gauges as follows:
 
-    Profit YTD and Revenue YTD: I had already created this earlier in the project
-    Profit Goal and Revenue Goal, which were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year
+Profit YTD and Revenue YTD: I had already created this earlier in the project
+Profit Goal and Revenue Goal, which were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year
 
 I added the visuals to the drillthrough page.
+
+![](stores_drillthrough_screenshot.png)
