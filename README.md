@@ -388,3 +388,21 @@ I assigned my Geography hierarchy to the Location field, and ProfitYTD to the Bu
 ### Country Slicer
 
 I added a slicer above the map, set the slicer field to Stores[Country], and in the Format section I set the slicer style as Tile and the Selection settings to Multi-select with Ctrl/Cmd and Show "Select All" as an option in the slicer.
+
+### Stores Drillthrough Page
+
+I wanted to make it easy for the region managers to check on the progress of a given store, so I created a drillthrough page that summarised each store's performance. This included the following visuals:
+
+A table showing the top 5 products, with columns: Description, Profit YTD, Total Orders, Total Revenue
+A column chart showing Total Orders by product category for the store
+Gauges for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. The target used the Target field, not the Maximum Value field, as the target changed as we moved through the year.
+A Card visual showing the currently selected store
+
+I created a new page named Stoes Drillthrough. I opened the format pane and expanded the Page information tab. I set the Page type to Drillthrough and set Drill through when to Used as category. I set Drill through from to country region.
+
+I needed some measures for the gauges as follows:
+
+    Profit YTD and Revenue YTD: I had already created this earlier in the project
+    Profit Goal and Revenue Goal, which were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year
+
+I added the visuals to the drillthrough page.
