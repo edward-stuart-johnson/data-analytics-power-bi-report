@@ -367,3 +367,9 @@ The final step was to assign the actions on my buttons to the bookmarks. I opene
 ![](slicer_bar_open_screenshot.png)
 
 Finally, I tested my buttons and slicers (I remembered I needed to Ctrl-Click to use buttons while designing the report in Power BI Desktop).
+
+## Stores Map Page
+
+The regional managers requested a reprot page that allows them to easily check on the stores under their control, allowign them to see which of the stroes they are responsible are msot profitable, as well as which are on track to reach their quarterly profit and revenue targets. 
+
+The best way to do this is using a map visual.
