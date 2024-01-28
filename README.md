@@ -373,3 +373,18 @@ Finally, I tested my buttons and slicers (I remembered I needed to Ctrl-Click to
 The regional managers requested a reprot page that allows them to easily check on the stores under their control, allowign them to see which of the stroes they are responsible are msot profitable, as well as which are on track to reach their quarterly profit and revenue targets. 
 
 The best way to do this is using a map visual.
+
+### Map Visual
+
+I added a new map visual on the Stores Map page. It took up the majority of the page, just leaving a narrow band at the top of the page for a slicer. I set the style to my satisfaction in the Format pane, and made sure Show Labels was set to On.
+
+I set the controls of my map as follows:
+    Auto-Zoom: On
+    Zoom buttons: Off
+    Lasso button: Off
+
+I assigned my Geography hierarchy to the Location field, and ProfitYTD to the Bubble size field.
+
+### Country Slicer
+
+I added a slicer above the map, set the slicer field to Stores[Country], and in the Format section I set the slicer style as Tile and the Selection settings to Multi-select with Ctrl/Cmd and Show "Select All" as an option in the slicer.
