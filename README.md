@@ -405,7 +405,14 @@ I created a new page named Stoes Drillthrough. I opened the format pane and expa
 I needed some measures for the gauges as follows:
 
 Profit YTD and Revenue YTD: I had already created this earlier in the project
-Profit Goal and Revenue Goal, which were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year
+
+Previous YTD Profit and Previous YTD Revenue, e.g.
+
+Previous YTD Profit = CALCULATE(SUMX(Orders, (RELATED(Products[Sale Price]) - RELATED(Products[Cost Price])) * Orders[Product Quantity]), DATESYTD(SAMEPERIODLASTYEAR(Dates[Date])))
+
+Profit Goal and Revenue Goal, which were a 20% increase on the previous year's year-to-date profit or revenue at the current point in the year, e.g.
+
+Profit Goal = [Previous YTD Profit] * 1.2
 
 I added the visuals to the drillthrough page.
 
