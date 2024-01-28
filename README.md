@@ -414,3 +414,5 @@ I added the visuals to the drillthrough page.
 ### Stores Tooltip Page
 
 I want users to be able to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. To do this, I created a custom tooltip page, and copied over the profit gauge visual, then set the tooltip of the visual to the tooltip page I had created.
+
+![](stores_tooltip_screenshot.png)
