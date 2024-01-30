@@ -333,6 +333,8 @@ X-Axis is Products[Profit per Item]
 Y-Axis is Products[Total Quantity]
 Legend is Products[Category]
 
+![](product_detail_page_screenshot.png)
+
 ### Slicer Toolbar
 
 Slicers were a handy way for me to control how the data on a page were filtered, but adding multiple slicers cluttered up the layout of my report page.
