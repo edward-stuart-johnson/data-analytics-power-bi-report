@@ -440,7 +440,7 @@ To save the changes, I selected Edit interactions again from the Format tab of t
 
 ### Customer Detail Page
 
-I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. I prevented the Total Customers by Product Donut Chart from affecting the Customers line graph. I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
+I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. I prevented the Total Customers by Product Column Chart from affecting the Customers line graph. I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
 
 ### Product Detail Page
 
