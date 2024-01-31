@@ -438,11 +438,12 @@ I saw filter and highlight icons on the other visuals on the report page. To dis
 I repeated the same process for the other visual that I wanted to change the interaction behavior.
 To save the changes, I selected Edit interactions again from the Format tab of the ribbon.
 
-
 Customer Detail Page
 
-- I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. - I prevented the Total Customers by Product Donut Chart from affecting the Customers line graph. - I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
+I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. - I prevented the Total Customers by Product Donut Chart from affecting the Customers line graph. - I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
 
 Product Detail Page
 
-- I turned off the visual interactions of the Orders vs. Profitability scatter graph and the Top 10 Products table with the other visuals.
+I turned off the visual interactions of the Orders vs. Profitability scatter graph and the Top 10 Products table with the other visuals.
+
+## Navigation Bar
