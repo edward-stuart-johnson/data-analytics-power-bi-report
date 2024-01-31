@@ -425,3 +425,24 @@ I added the visuals to the drillthrough page.
 I want users to be able to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. To do this, I created a custom tooltip page, and copied over the profit gauge visual, then set the tooltip of the visual to the tooltip page I had created.
 
 ![](stores_tooltip_screenshot.png)
+
+## Cross-Filtering
+
+Power BI has crpss-highlighting set up by default on most visuals, so lciking o na regino in one visual will automatically filter the otehrs. Thsi can be good for some situations, but it others in can confuse the user and obscure the message I want to get across. So I wanted to change the visual interactions settings of my Power BI report pages.
+
+Executive Summary Page
+
+I made sure that the Product Category bar chart and the Top 10 Products table did not filter the card visuals or KPIs. I selected the Product Category bar chart or the Top 10 Products table to make it active.
+From the Format tab of the ribbon, I selected Edit Interactions.
+I saw filter and highlight icons on the other visuals on the report page. To disable the cross-filtering or cross-highlighting effect of the selected visual, I clicked on the None icon on the card visuals or KPIs that I didn't want to be affected.
+I repeated the same process for the other visual that I wanted to change the interaction behavior.
+To save the changes, I selected Edit interactions again from the Format tab of the ribbon.
+
+
+Customer Detail Page
+
+- I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. - I prevented the Total Customers by Product Donut Chart from affecting the Customers line graph. - I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
+
+Product Detail Page
+
+- I turned off the visual interactions of the Orders vs. Profitability scatter graph and the Top 10 Products table with the other visuals.
