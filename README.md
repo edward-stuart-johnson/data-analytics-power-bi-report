@@ -447,3 +447,15 @@ I disabled the cross-filtering effect of the Top 20 Customers table on the other
 I turned off the visual interactions of the Orders vs. Profitability scatter graph and the Top 10 Products table with the other visuals.
 
 ## Navigation Bar
+
+I added navigation buttons for the individual report pages.
+
+For each page, there was a custom icon available in the custom icons collection I had downloaded earlier in the project. For each icon there were two colour variants. I used a white version for the default button appearance, and an orange version so that the button changed colour when I hovered over it with the mouse pointer. 
+
+In the sidebar of the Executive Summary page, I added four new blank buttons, and in the Format > Button Style pane, I made sure the Apply settings to field was set to Default, and set each button icon to the relevant white png in the Icon tab.
+
+For each button, I went to Format > Button Style > Apply settings to and set it to On Hover, and then selected the alternative orange colour of the relevant button under the Icon tab.
+
+For each button, I turned on the Action format option, and selected the type as Page navigation, and then selected the appropriate page under Destination.
+
+Finally, I grouped the buttons together, and copied them across to the other pages. I ensured that each button linked to the relevant other page.
