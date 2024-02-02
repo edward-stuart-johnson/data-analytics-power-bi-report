@@ -459,3 +459,5 @@ For each button, I went to Format > Button Style > Apply settings to and set it 
 For each button, I turned on the Action format option, and selected the type as Page navigation, and then selected the appropriate page under Destination.
 
 Finally, I grouped the buttons together, and copied them across to the other pages. I ensured that each button linked to the relevant other page.
+
+![](navigation_bar_screenshot.png)
