@@ -1,10 +1,10 @@
 # Data Analytics Power BI Report
 
-In this fictious scenario I have recently been approached by a medium-sized international retailer who is keen on elevating their business intelligence practices. With operations spanning across different regions, they've accumulated large amounts of sales from disparate sources over the years.
+In this fictitious scenario, I have recently been approached by a medium-sized international retailer that is keen on elevating its business intelligence practices. With operations spanning across different regions, they've accumulated large amounts of sales from disparate sources over the years.
 
 Recognizing the value of this data, they aim to transform it into actionable insights for better decision-making. My goal is to use Microsoft Power BI to design a comprehensive Quarterly report. This will involve extracting and transforming data from various origins, designing a robust data model rooted in a star-based schema, and then constructing a multi-page report.
 
-The report will present a high-level business summary tailored for C-suite executives, and also give insights into their highest value customers segmented by sales region, provide a detailed analysis of top-performing products categorised by type against their sales targets, and a visually appealing map visual that spotlights the performance metrics of their retail outlets across different territories.
+The report will present a high-level business summary tailored for C-suite executives, give insights into their highest value customers segmented by sales region, provide a detailed analysis of top-performing products categorised by type against their sales targets, and a visually appealing map visual that spotlights the performance metrics of their retail outlets across different territories.
 
 ## Data Loading and Preparation
 
@@ -472,9 +472,17 @@ I connected to a Postgres database server hosted on Microsoft Azure and ran quer
 
 The table and column names in this database are different from the ones I had been using in Power BI.
 
-I printed a list of the tables in the database and saved the result to a csv file for quick referencing.
+I printed a list of the tables in the database usign a SQL query:
 
-I printed a list of the columns in the orders table usign a SQL query: 
+SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
+
+and saved the result to a csv file for quick referencing:
+
+I printed a list of the columns in the orders table: 
+
+SELECT COLUMN_NAME
+FROM INFORMATION.SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'orders'
 
 ![](SQL_column_name_query_screenshot.png)
 
