@@ -422,25 +422,25 @@ I added the visuals to the drillthrough page.
 
 ### Stores Tooltip Page
 
-I want users to be able to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. To do this, I created a custom tooltip page, and copied over the profit gauge visual, then set the tooltip of the visual to the tooltip page I had created.
+I want users to see each store's year-to-date profit performance against the profit target just by hovering the mouse over a store on the map. To do this, I created a custom tooltip page and copied over the profit gauge visual, then set the tooltip of the visual to the tooltip page I had created.
 
 ![](stores_tooltip_screenshot.png)
 
 ## Cross-Filtering
 
-Power BI has cross-highlighting set up by default on most visuals, so clicking on a region in one visual will automatically filter the others. Thsi can be good for some situations, but it others in can confuse the user and obscure the message I want to get across. So I wanted to change the visual interactions settings of my Power BI report pages.
+Power BI has cross-highlighting set up by default on most visuals, so clicking on a region in one visual will automatically filter the others. This can be good for some situations, but in others, it can confuse the user and obscure the message I want to get across. So, I wanted to change the visual interaction settings of my Power BI report pages.
 
 ### Executive Summary Page
 
-I made sure that the Product Category bar chart and the Top 10 Products table did not filter the card visuals or KPIs. I selected the Product Category bar chart or the Top 10 Products table to make it active.
+I ensured the Product Category bar chart and the Top 10 Products table did not filter the card visuals or KPIs. I selected the Product Category bar chart or the Top 10 Products table to make it active.
 From the Format tab of the ribbon, I selected Edit Interactions.
-I saw filter and highlight icons on the other visuals on the report page. To disable the cross-filtering or cross-highlighting effect of the selected visual, I clicked on the None icon on the card visuals or KPIs that I didn't want to be affected.
-I repeated the same process for the other visual that I wanted to change the interaction behavior.
-To save the changes, I selected Edit interactions again from the Format tab of the ribbon.
+I saw filter and highlight icons by the other visuals on the report page. To turn off the cross-filtering or cross-highlighting effect of the selected visual, I clicked on the None icon on the card visuals or KPIs I didn't want to be affected.
+I repeated the same process for the other visual that I wanted to change the interaction behaviour.
+To save the changes, I selected Edit Interactions again from the Format tab of the ribbon.
 
 ### Customer Detail Page
 
-I disabled the cross-filtering effect of the Top 20 Customers table on the other visuals. I prevented the Total Customers by Product Column Chart from affecting the Customers line graph. I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
+I turned off the cross-filtering effect of the Top 20 Customers table on the other visuals. I prevented the Total Customers by Product Column Chart from affecting the Customers' line graph. I enabled the cross-filtering effect of the Total Customers by Country donut chart on the Total Customers by Product donut chart.
 
 ### Product Detail Page
 
@@ -450,21 +450,21 @@ I turned off the visual interactions of the Orders vs. Profitability scatter gra
 
 I added navigation buttons for the individual report pages.
 
-For each page, there was a custom icon available in the custom icons collection I had downloaded earlier in the project. For each icon there were two colour variants. I used a white version for the default button appearance, and an orange version so that the button changed colour when I hovered over it with the mouse pointer. 
+For each page, a custom icon was available in the custom icons collection I had downloaded earlier in the project. There were two colour variants for each icon. I used a white version for the default button appearance, and an orange version so that the button changed colour when I hovered over it with the mouse pointer. 
 
-In the sidebar of the Executive Summary page, I added four new blank buttons, and in the Format > Button Style pane, I made sure the Apply settings to field was set to Default, and set each button icon to the relevant white png in the Icon tab.
+In the sidebar of the Executive Summary page, I added four new blank buttons, and in the Format > Button Style pane, I made sure the Apply settings to field was set to Default and set each button icon to the relevant white PNG in the Icon tab.
 
-For each button, I went to Format > Button Style > Apply settings to and set it to On Hover, and then selected the alternative orange colour of the relevant button under the Icon tab.
+For each button, I went to Format > Button Style > Apply settings to and set it to On Hover, then selected the alternative orange colour of the relevant button under the Icon tab.
 
-For each button, I turned on the Action format option, and selected the type as Page navigation, and then selected the appropriate page under Destination.
+For each button, I turned on the Action format option, selected the type as Page navigation, and then selected the appropriate page under Destination.
 
-Finally, I grouped the buttons together, and copied them across to the other pages. I ensured that each button linked to the relevant other page.
+Finally, I grouped the buttons and copied them to the other pages. I ensured that each button was linked to the relevant other page.
 
 ![](navigation_bar_screenshot.png)
 
-## Creatign Metrics FOr USers Outside the COmpany Using SQL
+## Creating Metrics FOr Users Outside the COmpany Using SQL
 
-In industry, often clients who didn’t have direct access to specialised visualisation tools like Power BI. To ensure that data insights could still be extracted and shared with a broader audience, I used SQL queries to extract and disseminate key data without relying solely on visualisation platforms.
+In industry, clients often don't have direct access to specialised visualisation tools like Power BI. To ensure that data insights could still be extracted and shared with a broader audience, I used SQL queries to extract and disseminate key data without relying solely on visualisation platforms.
 
 I connected to a Postgres database server hosted on Microsoft Azure and ran queries from VSCode using the SQLTools extension.
 
@@ -472,11 +472,11 @@ I connected to a Postgres database server hosted on Microsoft Azure and ran quer
 
 The table and column names in this database are different from the ones I had been using in Power BI.
 
-I printed a list of the tables in the database usign a SQL query:
+I printed a list of the tables in the database using a SQL query:
 
 SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES
 
-and saved the result to a csv file for quick referencing:
+And saved the result to a CSV file for quick referencing:
 
 I printed a list of the columns in the orders table: 
 
