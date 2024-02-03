@@ -461,3 +461,24 @@ For each button, I turned on the Action format option, and selected the type as 
 Finally, I grouped the buttons together, and copied them across to the other pages. I ensured that each button linked to the relevant other page.
 
 ![](navigation_bar_screenshot.png)
+
+## Creatign Metrics FOr USers Outside the COmpany Using SQL
+
+In industry, often clients who didn’t have direct access to specialised visualisation tools like Power BI. To ensure that data insights could still be extracted and shared with a broader audience, I used SQL queries to extract and disseminate key data without relying solely on visualisation platforms.
+
+I connected to a Postgres database server hosted on Microsoft Azure and ran queries from VSCode using the SQLTools extension.
+
+### Checking the Table and Column Names
+
+The table and column names in this database are different from the ones I had been using in Power BI.
+
+I printed a list of the tables in the database and saved the result to a csv file for quick referencing.
+
+I printed a list of the columns in the orders table usign a SQL query: 
+
+![](SQL_column_name_query_screenshot.png)
+
+and saved the result to a CSV file called orders_columns.csv
+
+I repeated the same process for each other table in the database, saving the results to CSV files.
+
