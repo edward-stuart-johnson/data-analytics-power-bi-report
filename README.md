@@ -468,7 +468,7 @@ I connected to a Postgres database server hosted on Microsoft Azure and ran quer
 
 ### Checking the Table and Column Names
 
-The table and column names in this database are different from the ones I had been using in Power BI.
+The table and column names in this database are different from those I used in Power BI.
 
 I printed a list of the tables in the database using a SQL query:
 
@@ -499,11 +499,13 @@ FROM dim_store
 WHERE country = 'UK'
 
 #### Which month in 2022 had the highest revenue?
-My query changes dates in the country_region table to date format. And create a common table expression to calculate the total revenue grouped by month and year. My query ranks the monthly revenues in descending order and then filters to select only the highest revenue month in 2022
+My query changes dates in the country_region table to date format. The subsequent query creates a common table expression to calculate the total revenue grouped by month and year. My query ranks the monthly revenues in descending order and then filters to select only the highest revenue month in 2022
 
 #### Which German store type had the highest revenue for 2022?
+My query joins the orders, dim_store, and dim_date tables on the store_type and date columns and filters the result to get only the orders from the German stores in 2022. It then groups the orders by the store_type column and calculates the total revenue for each store type using the SUM function. It then ranks the store types by revenue in descending order using the RANK function and filters the result to select only the store type with the highest rank.
 
 #### Create a view where the rows are the store types, and the columns are the total sales, the percentage of total sales, and the number of orders.
+My query uses the SUM, AVG and COUNT functions to calculate the metrics and the ROUND function to format the percentage values.
 
 #### Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
-My query joins the orders, dim_product, dim_store, and dim_date tables on the product_id, store_id, and date_id columns and filters the result to get only the orders from the "Wiltshire, UK" region in 2021. It then groups the orders by the category column and calculates the total profit for each category using the sale_price and cost columns. It then ranks the categories by profit in descending order using the RANK function and filters the result to get only the category with 
+My query joins the orders, dim_product, dim_store, and dim_date tables on the product_id, store_id, and date_id columns and filters the result to get only the orders from the "Wiltshire, UK" region in 2021. It then groups the orders by the category column and calculates the total profit for each category using the sale_price and cost columns. It then ranks the categories by profit in descending order using the RANK function and filters the result to get only the category with the highest-ranking profit (which has a rank of 1).
