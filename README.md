@@ -490,7 +490,7 @@ I repeated the same process for each other table in the database, saving the res
 
 ### Querying the Database
 
-I wrote SQL queries to answer the following questions. In each case, after I was happy with the query result, I exported the result to a CSV file and uploaded it to my Github repository, along with the query itself as a .sql file. So, for example, question 1 has files named question_1.sql and question_1.csv
+I wrote SQL queries to answer the following questions. In each case, I exported the result to a CSV file and uploaded it to my Github repository, along with the query itself as a .sql file. So, for example, question 1 has files named question_1.csv and question_1.sql.
 
 #### How many staff were there in all of the UK stores?
 I used the SUM function in my query:
