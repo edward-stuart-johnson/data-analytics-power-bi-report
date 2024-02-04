@@ -488,3 +488,54 @@ and saved the result to a CSV file called orders_columns.csv
 
 I repeated the same process for each other table in the database, saving the results to CSV files.
 
+### Querying the Database
+
+I wrote SQL queries to answer the following questions. In each case, after I was happy with the result of the query, I exported the result to a csv file and uploaded it to my Github repository, along with the query itself as a .sql file. So for example, question 1 has files named question_1.sql and question_1.csv
+
+How many staff were there in all of the UK stores?
+
+I used the SUM function:
+SELECT SUM(staff_numbers)
+FROM dim_store
+WHERE country = 'UK'
+
+Which month in 2022 had the highest revenue?
+
+Which German store type had the highest revenue for 2022?
+
+I created a view where the rows were the store types and the columns were the total sales, percentage of total sales and the count of orders.
+
+Which product category generated the most profit for the “Wiltshire, UK” region in 2021?
+My -- query joins the orders, dim_product, dim_store, and dim_date tables on the product_id, store_id, and date_id columns
+-- and filters the result to get only the orders from the "Wiltshire, UK" region in 2021. It then groups the orders by the category column
+-- and calculates the total profit for each category using the sale_price and cost columns. It then ranks the categories by profit
+-- in descending order using the RANK function and filters the result to get only the category with the highest rank, which is 1
+
+
+WITH category_profit AS(
+    SELECT
+    p.category, 
+    SUM(p.sale_price - p.cost_price) AS profit
+    FROM orders o
+    JOIN dim_product p ON o.product_code = p.product_code
+    JOIN dim_store s ON o.store_code = s.store_code
+    JOIN dim_date d ON o.order_date = d.date
+    WHERE s.full_region = 'Wiltshire, UK'
+    AND d.year = 2021
+    GROUP BY p.category)
+
+, ranked_profit AS (
+    SELECT
+    category,
+    profit,
+    RANK() OVER (ORDER BY profit DESC) AS rank
+    FROM category_profit)
+
+SELECT
+category,
+profit
+FROM ranked_profit
+WHERE rank = 1
+
+
+
