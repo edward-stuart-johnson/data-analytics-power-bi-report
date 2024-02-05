@@ -400,7 +400,7 @@ A column chart showing Total Orders by product category for the store
 Gauges for Profit YTD against a profit target of 20% year-on-year growth vs. the same period in the previous year. The target used the Target field, not the Maximum Value field, as the target changed as we moved through the year.
 A Card visual showing the currently selected store
 
-I created a new page named Stores Drillthrough. I opened the format pane and expanded the Page information tab. I set the Page type to Drillthrough and set Drill through when to Used as category. I set Drill through from to country region.
+I created a new page named Stores Drillthrough. I opened the "format" pane and expanded the "Page information" tab. I set the Page type to Drillthrough and set Drill through when to "Used as category". I set "Drill through from" to the country region.
 
 I needed some measures for the gauges as follows:
 
@@ -431,8 +431,7 @@ Power BI has cross-highlighting set up by default on most visuals, so clicking o
 ### Executive Summary Page
 
 I ensured the Product Category bar chart and the Top 10 Products table did not filter the card visuals or KPIs. I selected the Product Category bar chart or the Top 10 Products table to make it active.
-From the Format tab of the ribbon, I selected Edit Interactions.
-I saw filter and highlight icons by the other visuals on the report page. To turn off the cross-filtering or cross-highlighting effect of the selected visual, I clicked on the None icon on the card visuals or KPIs I didn't want to be affected.
+From the Format tab of the ribbon, I selected Edit Interactions to display the "filter" and "highlight" icons by the other visuals on the report page. To turn off the cross-filtering or cross-highlighting effect of the selected visual, I clicked on the None icon on the card visuals or KPIs I didn't want to be affected.
 I repeated the same process for the other visual that I wanted to change the interaction behaviour.
 To save the changes, I selected Edit Interactions again from the Format tab of the ribbon.
 
@@ -468,7 +467,7 @@ I connected to a Postgres database server hosted on Microsoft Azure and ran quer
 
 ### Checking the Table and Column Names
 
-The table and column names in this database are different from those I used in Power BI.
+This database's table and column names differ from those I used in Power BI.
 
 I printed a list of the tables in the database using a SQL query:
 
@@ -490,22 +489,22 @@ I repeated the same process for each other table in the database, saving the res
 
 ### Querying the Database
 
-I wrote SQL queries to answer the following questions. In each case, I exported the result to a CSV file and uploaded it to my Github repository, along with the query itself as a .sql file. So, for example, question 1 has files named question_1.csv and question_1.sql.
+I wrote SQL queries to answer the following questions. In each case, I exported the result to a CSV file and uploaded it to my Github repository, along with the query as a .sql file. So, for example, question 1 has files named question_1.csv and question_1.sql.
 
-#### How many staff were there in all of the UK stores?
-I used the SUM function in my query:
+#### Question 1: How many staff were there in all of the UK stores?
+For my query, I used the SUM function on staff_numbers from the dim_store table, filtering by the country of 'UK':
 SELECT SUM(staff_numbers)
 FROM dim_store
 WHERE country = 'UK'
 
-#### Which month in 2022 had the highest revenue?
-My query changes dates in the country_region table to date format. The subsequent query creates a common table expression to calculate the total revenue grouped by month and year. My query ranks the monthly revenues in descending order and then filters to select only the highest revenue month in 2022
+#### Question 2: Which month in 2022 had the highest revenue?
+My query changes dates in the country_region table to date format. The subsequent query creates a common table expression to calculate the total revenue grouped by month and year. My query ranks the monthly revenues in descending order and then filters to select only the month in 2022 with the highest revenue.
 
-#### Which German store type had the highest revenue for 2022?
-My query joins the orders, dim_store, and dim_date tables on the store_type and date columns and filters the result to get only the orders from the German stores in 2022. It then groups the orders by the store_type column and calculates the total revenue for each store type using the SUM function. It then ranks the store types by revenue in descending order using the RANK function and filters the result to select only the store type with the highest rank.
+#### Question 3: Which German store type had the highest revenue for 2022?
+My query filters the dim_store table to get only the German stores in 2022. It then groups the orders by the sale year and calculates the total revenue for each store type using the SUM function. It then ranks the store types by revenue in descending order using the RANK function and filters the result to select only the store type with the highest rank.
 
-#### Create a view where the rows are the store types, and the columns are the total sales, the percentage of total sales, and the number of orders.
-My query uses the SUM, AVG and COUNT functions to calculate the metrics and the ROUND function to format the percentage values.
+#### Question 4: Create a view where the rows are the store types, and the columns are the total sales, the percentage of total sales, and the number of orders.
+My query joins the orders and dim_store tables on the store_code column and uses the SUM, AVG and COUNT functions to calculate the metrics and the ROUND function to format the percentage values.
 
-#### Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
-My query joins the orders, dim_product, dim_store, and dim_date tables on the product_id, store_id, and date_id columns and filters the result to get only the orders from the "Wiltshire, UK" region in 2021. It then groups the orders by the category column and calculates the total profit for each category using the sale_price and cost columns. It then ranks the categories by profit in descending order using the RANK function and filters the result to get only the category with the highest-ranking profit (which has a rank of 1).
+#### Question 5: Which product category generated the most profit for the "Wiltshire, UK" region in 2021?
+My query joins the orders, dim_product, dim_store, and dim_date tables on the product_id, store_id, and date_id columns and filters the result to get only the orders from the "Wiltshire, UK" region in 2021. It then groups the orders by the category column and calculates the total profit for each category using the sale_price and cost columns. It then ranks the categories by profit in descending order using the RANK function and filters the result to get only the category with the highest-ranking profit.
