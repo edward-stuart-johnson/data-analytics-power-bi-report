@@ -1,18 +1,17 @@
 
 -- change dates in country-region table to date format
 UPDATE country_region 
-SET dates = CAST(dates AS date);
+SET dates = CAST(dates AS DATE);
 
 -- create a common table expression to calculate the total revenue grouped by month and year
 WITH revenue AS (
     SELECT
     store_type,
     DATE_PART('year', TIMESTAMP dates) AS sale_year,
-    SUM(country_region.sale_price) AS revenue,
-    country
-    FROM country_region,
-    dim_store
-    GROUP BY DATE_PART(YEAR, dates)
+    SUM(sale_price) AS revenue
+    FROM dim_store
+    WHERE country = 'Germany'
+    GROUP BY DATE_PART(YEAR, TIMESTAMP dates)
     )
 
 -- rank the yearly revenues in descending order
@@ -21,7 +20,6 @@ WITH revenue AS (
     store_type,
     sale_year,
     revenue,
-    country,
     RANK() OVER (ORDER BY revenue DESC)
     AS rank
     FROM revenue
@@ -35,4 +33,3 @@ SELECT
     FROM ranked_revenue
     WHERE sale_year = 2022
     AND rank = 1
-    AND country = 'Germany'
